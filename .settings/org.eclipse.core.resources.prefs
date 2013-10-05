@@ -1,5 +1,10 @@
 eclipse.preferences.version=1
 encoding//androidServer/settings.py=utf8
+encoding//goods/models.py=utf-8
+encoding//goods/urls.py=utf8
+encoding//goods/views.py=utf8
 encoding//home/models.py=utf-8
 encoding//home/urls.py=utf8
 encoding//home/views.py=utf8
+encoding//login/urls.py=utf8
+encoding//login/views.py=utf8

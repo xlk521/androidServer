@@ -11,3 +11,11 @@ urlpatterns = patterns('',
 urlpatterns += patterns('',
      url(r'^', include("home.urls")),
 )
+
+urlpatterns += patterns('',
+     url(r'^', include("login.urls")),
+)
+
+urlpatterns += patterns('',
+     url(r'^', include("goods.urls")),
+)

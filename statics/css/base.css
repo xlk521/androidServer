@@ -1,0 +1,214 @@
+HEAD
+@charset "utf-8";
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333333;
+    background:#f7f7f7;
+    min-width:984px;
+    margin: 0px;
+    height: 100%;
+}
+html{
+    height:100%;
+}
+div{
+ display:block;
+}
+ul {
+	list-style:none;
+}
+img {
+	border:none;
+}
+input[type="checkbox"]{width:20px;}
+/*关于跨浏览器的设置*/
+.box {
+    opacity: 1;
+    float:left;
+    padding-left:10px;
+}
+
+.container {
+    box-shadow: 20px;
+    -moz-transition: -moz-box-shadow 2s;
+    -webkit-border-radius: 4px;
+    animation: slide 1s alternate;
+    background: linear-gradient(top, #e3e3e3 10%, white);
+    display: -moz-box;
+}
+
+@-webkit-keyframes "slide" {
+   0% { left: 0; box-shadow: 10px 10px 10px black; }
+   100% { left: 50px; box-shadow: 5px 5px 5px black; }
+}
+
+
+/*============================*/
+#head_base,#content_base,#contentBase,#foot_base{}
+#head_base,#logo_base,.headRight_base,#logo_base a{
+    height: 120px;
+}
+#head_base{
+    background: linear-gradient(#323232, #272727);
+}
+#content_base{
+    background: url(/statics/img/banner_bg.jpg);
+}
+.center,#logo_base,.headRight_base{
+    position: relative;
+    overflow: hidden;
+}
+.center{
+    width: 1024px;
+    margin: 0 auto;
+}
+#logo_base{
+    width: 107px;
+    background :url(/statics/img/logo.jpg) no-repeat;
+    float: left;
+}
+#logo_base a{
+    width: 107px;
+}
+.headRight_base,#head_base .up,#head_base .down{
+    width: 662px;
+}
+#head_base .up,#head_base .down{
+    position: absolute;
+}
+.headRight_base{
+    float: right;
+}
+#head_base .up{
+    height: 60px;
+    top: 0px;
+    border-bottom: 1px solid #000;
+}
+#head_base .down,#head_base .down_left,#head_base .down_right{
+    height: 50px;
+}
+#head_base .down{
+    bottom: 0px;
+}
+#head_base .list_head{
+    display: block;
+    position: relative;
+    float: right;
+    width: 88px;
+    height: 35px;
+    border-right: 1px solid #303030;
+    border-left: 1px solid #000;
+    color: #d9e8f1;
+    padding: 8px 10px;
+}
+#head_base .list_head div{
+    padding: 5px 10px;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    font-size: 16px;
+}
+#head_base a.list_head:hover{
+    background: #1f1f1f;
+}
+#head_base a:hover span{
+    color: white;
+    text-shadow:0 1px 2px rgba(0,0,0,.2);
+}
+#head_base .down_left,#head_base .down_right{
+    position: relative;
+}
+#head_base .down_left{
+    width: 200px;
+    float: left;
+    font-size: 18px;
+    color: #D2D9E0;
+}
+#head_base .down_right{
+    width: 450px;
+    float: right;
+}
+#head_base .down_right .form-control{
+    background: url(/statics/img/21232.jpg);
+}
+.search{
+    height: 35px;
+    overflow: hidden;
+    width: 275px;
+    position: relative;
+    margin: auto;
+    float: left;
+    padding-top: 10px;
+}
+#head_base .down_right .form-control{
+    margin-bottom: 0px;
+}
+.login{
+    position: relative;
+    float: right;
+    padding-top: 7px;
+}
+.login .btn{
+    padding: 7px 20px;
+    background-color: #354f83;
+}
+.login span a:hover,.input-group a:hover{
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#CECFCF), to(#141414));
+}
+.input-group a,.login span a{
+    background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#141414), to(#CECFCF));
+    color: #FAF0F0;
+}
+.downLeftSpan{
+    position: relative;
+    display: block;
+    padding-top: 16px;
+}
+/*============================center==================================*/
+.lunbo,.lunbo .Lleft,.lunbo .bs-example,.lunbo .carousel,.lunbo .carousel-inner,.lunbo .item{
+    height: 270px;
+    overflow: hidden;
+}
+.lunbo{
+    padding: 20px 0px 40px 0px;
+}
+.lunbo .Lleft{
+    width: 700px;
+    border: 10px solid #8C968D;
+    position: relative;
+    float: left;
+}
+.lunbo .Rright,.lunbo .Rright .up,.lunbo .Rright .down{
+    width: 270px;
+}
+.lunbo .Rright{
+    position: relative;
+    float: right;
+}
+.lunbo .bs-example .carousel-inner img{
+    width: 700px;
+    height: 270px;
+}
+.bs-example .left,.bs-example .right{
+    background:url(/statics/img/small.png) no-repeat;
+    background-position: -421px -59px;
+}
+.bs-example .left{
+    background-position: -421px -60px;
+}
+.bs-example .right{
+    background-position: -444px -60px;
+}
+.lunbo .Rright .up{
+    background: #928F92;
+    height: 200px;
+}
+.lunbo .Rright .down{
+    background: #928F92;
+    height: 70px;
+    margin-top: 20px;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html public "-//w3c//dtd html 4.01 transitional//en" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<meta http-equiv="Content-Type"/>
+		<title>{% block title %}{% endblock %}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="/statics/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="/statics/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="/statics/js/jquery-2.0.3.min.map"/>
+		{% block link %}{% endblock %}
+		<script type="text/javascript" src="/statics/js/jquery-2.0.3.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="/statics/js/bootstrap.min.js" charset="UTF-8"></script>
+		{% block script %}{% endblock %}
+	</head>
+	<body>
+		<div id="HomeBanner_top"></div>
+		<div id="head_base">
+			<div class="center">
+				<a href="">
+					<div id="logo_base"></div>
+				</a>
+				<div class="headRight_base">
+					<div class="up">
+						<a class="list_head"href=""style="border-right: 1px solid #000;">
+							<div>
+		                        <span>我要吐槽</span>
+		                    </div>
+						</a>
+						<a class="list_head"href="">
+							<div>
+		                        <span>购物车</span>
+		                    </div>
+						</a>
+						<a class="list_head"href="">
+							<div>
+		                        <span>我的摊位</span>
+		                    </div>
+						</a>
+						<a class="list_head"href="">
+							<div>
+		                        <span>我的篮子</span>
+		                    </div>
+						</a>
+						<a class="list_head"href="">
+							<div>
+		                        <span>我的收藏</span>
+		                    </div>
+						</a>
+						<a class="list_head"href="">
+							<div>
+		                        <span>格子屋</span>
+		                    </div>
+						</a>
+					</div>
+					<div class="down">
+						<div class="down_left">
+							<span class="downLeftSpan">1012621780@qq.com</span>
+						</div>
+						<div class="down_right">
+							<div class="col-lg-6 search">
+							    <div class="input-group">
+							      	<input type="text" class="form-control">
+							      	<span class="input-group-btn">
+							        	<a class="btn btn-default" type="button">Go!</a>
+							      	</span>
+							    </div>
+							</div>
+							<div class="login">
+						      	<span class="input-group-btn">
+						        	<a class="btn btn-default" type="button" href="/sign"target="_Blank">登录</a>
+						      	</span>
+						      	<span class="input-group-btn">
+						        	<a class="btn btn-default" type="button" href="/login"target="_Blank">注册</a>
+						      	</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content_base">
+			<div class="center">
+				<div class="lunbo">
+					<div class="Lleft">
+						<div class="bs-example">
+					      	<div id="carousel-example-captions" class="carousel slide bs-docs-carousel-example">
+						        <ol class="carousel-indicators">
+						          	<li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+						          	<li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
+						        </ol>
+						        <div class="carousel-inner">
+						          	<div class="item active">
+						            	<img data-src="" src="/statics/img/4.jpg" alt="900x500">
+							            <div class="carousel-caption">
+							              	<h3>First slide label</h3>
+							              	<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							            </div>
+						          	</div>
+						          	<div class="item">
+						            	<img data-src="holder.js/900x500/auto/#666:#666" src="/statics/img/5.jpg" alt="900x500">
+							            <div class="carousel-caption">
+							              	<h3>Second slide label</h3>
+							              	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							            </div>
+						        	</div>
+						        </div>
+						        <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+						          	<span class="glyphicon glyphicon-chevron-left"></span>
+						        </a>
+						        <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+						          	<span class="glyphicon glyphicon-chevron-right"></span>
+						        </a>
+					      	</div>
+					    </div>
+					</div>
+					<div class="Rright">
+						<div class="up"></div>
+						<div class="down"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contentBase">
+			{% block baseContent %}{% endblock %}
+		</div>
+		{% include "footerBlock.html" %}
+		<div id="foot_base">
+			<div id="footer" class="indexfooter_hide_show" onmouseover="footer_stoptime()" onmouseout="footer_time()" style="bottom: -55px;">
+				<div class="footerCon">
+					<ul>
+						<li class="logo2"></li>
+						<li class="footerLinks">
+							<div class="footerDiva1">
+								<a>创作者加入</a>
+								<a>品牌商参与</a>
+								<a>关于罐头工场</a>
+								<a>招聘</a>
+								<a>帮助&amp;常见问题</a>
+								<a>联系我们</a>
+								<a>客户服务</a>
+							</div>
+							<div class="footerDiva2">
+								<ul>
+									<li><em>©</em> 2012 罐头工场</li>
+									<li><a>远程创作与跨界协作平台</a></li>
+									<li><a>隐私权政策</a></li>
+									<li><a>使用条款</a></li>
+									<li><a>版权说明</a></li>
+									<li>京<a>128713</a>号</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

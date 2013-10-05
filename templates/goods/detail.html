@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="/statics/css/GT_css.css" rel="stylesheet" type="text/css" />
+<link  href="/statics/css/GT_trade.css" rel="stylesheet" type="text/css" />
+<title>物品详情页</title>
+<script type="text/javascript" src="/statics/js/jquery-2.0.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/statics/js/jquery.tmpl.min.js"></script>
+<script type="text/javascript">
+var product_num=1;
+var product_paynum_size=0;
+var product_paynum_side=0;
+var product_paynum=0;
+var money=0;
+var add_num=0;//单张增加的金额数目
+function product_count_paynum(obj){//产品详情页--计算产品需要支付的money
+    var myA = document.getElementById("product_offer");
+    var add_money=parseFloat(obj.value);
+    var clss=obj.className;
+    if(clss=="product_size_pay"){
+        product_paynum_size=add_money;
+    }
+    else if(clss=="product_side_pay"){
+        product_paynum_side=add_money
+        if(obj.title=="白框"){
+            console.log("1");
+            //$("#product_side_imgbg").attr("background","#aaa");
+            document.getElementById('product_side_imgbg').style.backgroundColor='#ffffff';
+        }
+        else if(obj.title=="黑框"){
+            console.log("2");
+            document.getElementById('product_side_imgbg').style.backgroundColor='#000000';
+        }
+        else{
+            console.log("3");
+            document.getElementById('product_side_imgbg').style.backgroundColor='#aaaaaa';
+        }
+    }
+    add_num=product_paynum_size+product_paynum_side;
+    add_money=product_paynum+add_num;
+    var money_pay=add_money*product_num;
+    myA.innerText=money_pay;
+    money=add_money;
+    console.log("product_paynum:"+product_paynum);
+    console.log("add_money:"+add_money);
+}
+function product_pay(add_nav){//物品数量与资金的关系函数
+    if(add_nav=="nav"){
+        if(product_num>1){product_num -=1;}
+    }
+    else if(add_nav=="add"){
+        var max_num=$(".ddinputw60h21").attr('maxlength');
+        if(product_num<max_num){product_num +=1;}
+    }
+    var myA = document.getElementById("product_offer");
+    console.log(myA);
+    var money_pay=money*product_num;
+    myA.innerText=money_pay;
+    $(".ddinputw60h21").attr('value',product_num);
+}
+var product_other_works='<div class="product_otherdiv" style="float:left;position:absolute"><a ><img src="/statics/IMG/xq_cps1.jpg" width="110" height="83" /></a></div>';
+$.template("product_otherworks", product_other_works );
+var product_other_left=new Array();//存放布局时的列表
+var product_others_worknum=9;//同类产品的个数
+function product_others(){//产品详情页布模版
+    for(var i=0;i<product_others_worknum;i++){
+        var other_distence=0;
+        other_distence=114*i;
+        $.tmpl( "product_otherworks").appendTo( ".detail_left_content_w" );
+        $(".product_otherdiv").css({left:other_distence});
+        product_other_left[i]=-other_distence;
+        $('.product_otherdiv').removeAttr('class');  
+    }
+}
+var product_left=0;
+function product_next_prive(next_prive){//产品详情页的其他相关作品的移动
+    var last_works=product_others_worknum-5;//停止移动的位置
+    if(next_prive=="next" && product_left<last_works){
+        product_left +=1;
+    }
+    else if(next_prive=="prive" && product_left>0){
+        product_left -=1;
+    }
+    
+    $( ".detail_left_content_w" ).animate({left:product_other_left[product_left]});
+}
+$(document).ready(function(){
+    //获取总共需要支付的money
+    var myA = document.getElementById("product_offer");
+    product_paynum=parseFloat(myA.innerText);
+    money=parseFloat(myA.innerText);
+    product_others();
+    
+    
+    $(".detail_slide_left").click(function(){  
+        product_next_prive("prive");
+    });
+    $(".detail_slide_right").click(function(){  
+        product_next_prive("next");
+    });
+    
+    $(".ddnumbera1").click(function(){  
+        product_pay("nav");
+    });
+    $(".ddnumbera2").click(function(){
+        product_pay("add");
+    });
+});
+
+</script>
+</head>
+
+<body>
+	<div id="detail_content_div">
+		<div id="detail_content_left">
+			<div id="detail_content_left_top">
+				<ul class="ulmarginw25">
+					<li class="h30">
+						<h3>青藏高原</h3>
+					</li>
+					<li class="h24">
+						<span>类别：</span>
+						<em>摄影</em>
+						<span>品牌：</span>
+						<em>金色闪光</em>
+						<span>作者：</span>
+						<em>遥远</em>
+					</li>
+				</ul>
+				<hr class="bottom_line" />
+				<ul class="ulmarginw25">
+					<li class="h410">
+						<div style="width:510px;height:410px;background:#aaa;position:absolute;">
+							<div id="product_side_imgbg" style="width:380px;height:330px;background:#000;margin:40px auto">
+								<img src="/statics/IMG/cp.gif" width="340" height="290" style="margin:20px 20px" />
+							</div>
+						</div>
+				
+					</li>
+					<li class="hauto1">
+						<p>所有复制品均有6cans统一扫描、制定、装订。所有纸张均为康颂纸，画框均为____材质，6cans为您保证质量。</p>
+					</li>
+				</ul>
+			</div>
+			<div id="detail_content_left_bottom">
+				<div class="dclb">
+					<span>系列《<strong>走进西藏的春与秋</strong>》中的其它作品</span>
+				</div>
+				<div class="detail_left_content_w510">
+					<div class="detail_left_content_w470" style="overflow:hidden;width:456px;position:relative;margin-left:25px">
+						<div class="detail_left_content_w" style="position:relative"></div>
+					</div>
+					<a class="detail_slide_right" target="_self"></a>
+					<a class="detail_slide_left" style="position: absolute;" target="_self"></a>
+				</div>
+			</div>
+		</div>
+		<div id="detail_content_right">
+			<div id="detail_content_right_top">
+				<ul class="ulmarginw25">
+					<li class="h30">
+						<h3>数码微喷</h3>
+						<span>(限量100张)</span>
+					</li>
+					<li class="h24"></li>
+				</ul>
+				<hr class="bottom_line" />
+				<dl  class="ulmarginw25">
+					<dt class="lifontsize">请选择尺寸:</dt>
+					<dd class="lifontsize_dd">
+						<input class="product_size_pay" name="choose_size" type="radio" value="100" onclick="product_count_paynum(this)"/>
+						<em>20  X  30CM </em>
+						<strong>
+							<i class="ibg1"></i> 100.00
+						</strong>
+					</dd>
+					<dd class="lifontsize_dd">
+						<input class="product_size_pay" name="choose_size" type="radio" value="100" onclick="product_count_paynum(this)" />
+						<em>20  X  30CM </em>
+						<strong>
+							<i class="ibg1"></i> 100.00
+						</strong>
+					</dd>
+					<dd class="lifontsize_dd">
+						<input class="product_size_pay" name="choose_size" type="radio" value="200" onclick="product_count_paynum(this)"/>
+						<em>20  X  30CM </em>
+						<strong>
+							<i class="ibg1"></i> 200.00
+						</strong>
+					</dd>
+					<dd class="lifontsize_dd">
+						<input class="product_size_pay" name="choose_size" type="radio" value="300" onclick="product_count_paynum(this)"/>
+						<em>20  X  30CM </em>
+						<strong><i class="ibg1"></i> 300.00</strong>
+					</dd>
+					<dd class="lifontsize_dd">
+						<input class="product_size_pay" name="choose_size" type="radio" value="500" onclick="product_count_paynum(this)"/>
+						<em>20  X  30CM </em><strong><i class="ibg1"></i> 500.00</strong>
+					</dd>
+				</dl>
+				<hr class="bottom_line" />
+				<dl class="ulmarginw25">
+					<dt class="lifontsize">请选择画框:</dt>
+					<dd class="ddh112">
+						<li class="liw20">
+							<input type="radio" name="subProduct" class="product_side_pay" value="300" title="白框" onclick="product_count_paynum(this)">
+						</li>
+						<li>
+							<img  src="/statics/IMG/GT_detail_white20120913.jpg" alt="白框" width="83" height="82">
+							<p>+300RMB</p>
+						</li>
+						<li class="liw20">
+							<input type="radio" name="subProduct" class="product_side_pay" value="200" title="黑框" onclick="product_count_paynum(this)">
+						</li>
+						<li>
+							<img  src="/statics/IMG/GT_detail_black20120913.jpg" alt="黑框" width="83" height="82">
+							<p>+200RMB</p>
+						</li>
+						<li class="liw20">
+							<input type="radio" name="subProduct" class="product_side_pay"value="0" title="无框" onclick="product_count_paynum(this)">
+						</li>
+						<li>
+							<img  src="/statics/IMG/GT_detail_none20120913.jpg" alt="无框" width="83" height="82">
+							<p>+0RMB</p>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<hr class="bottom_line" />
+			<dl  class="ulmarginw25">
+				<dt class="lifontsize">请填写购买的数量:</dt>
+				<dd class="ddnumber">
+					<a class="ddnumbera1"></a>
+					<input name="" type="text" class="ddinputw60h21" value="1" maxlength="5" />
+					<a class="ddnumbera2"></a>
+					<span>件,(仅 5 件)</span>
+				</dd>
+			</dl>
+			<hr class="bottom_line" />
+			<dl  class="ulmarginw25">
+				<dt class="lifontsize">物流快递:(顺丰快递)</dt>
+				<dd class="dt_ddlogistics">
+					<span> 顺丰快递，运送时间7-10天。退换货政策"除质量问题不。予退换"如果有其它问题请联系客服4008208820。</span>
+				</dd>
+			</dl>
+		</div>
+		<div id="detail_content_right_bottom">
+			<div class="de_right_btleft">
+				<p>重量：<b>5</b> kg </p>
+				<p>总价：<b id="product_offer" title="1233.5"> 1233.00</b> RMB</p>
+			</div>
+			<div class="de_right_btright">
+				<a href="cart.html" class="cart_btn"><h3>加入购物车</h3></a>
+			</div>
+		</div>
+	</div> 
+	<div id="d_service">
+		<ul>
+			<li class="d_serviceli1">
+				<div class="d_serviceDIV1">
+					<div class="d_servicediv01"></div>
+					<h3>精挑细选</h3>
+					<p>来自优秀创作者的杰出作品，每件作品都独一无二。</p>
+				</div>
+		   </li>
+		   <li class="d_serviceli1">
+				<div class="d_serviceDIV1">
+					<div class="d_servicediv02"></div>
+					<h3>品质保证</h3>
+					<p>对于您挑选的作品，罐头工场采用行业顶级的微喷制作技术，并用环保材料进行多重包装。</p>
+				</div>
+		   </li>
+		   <li class="d_serviceli1">
+				<div class="d_serviceDIV1">
+					<div class="d_servicediv03"></div>
+					<h3>安全支付</h3>
+					<p>罐头工场开通了多种支付功能，保证您的支付安全、快捷。</p>
+				</div>
+		   </li>
+		   <li>
+				<div class="d_serviceDIV1">
+					<div class="d_servicediv04"></div>
+					<h3>安全送达</h3>
+					<p>罐头工场选择最优秀的快递服务商，以确保您的包裹完好无缺。</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+div.pageNum,.pageNumLeft,div.pageNum a.aCenter,div.homeConDown a.aLeft span,div.homeConDown a.aRight span{
+	height: 70px;
+}
+div.homeConDown a.aLeft span,div.homeConDown a.aRight span{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 28px;
+	background: url(/statics/IMG/GT_detail.png) no-repeat;
+	padding: 0px;
+}
+div.homeConDown a.aLeft,div.homeConDown a.aRight{
+	overflow: hidden;
+	display: block;
+	width: 100px;
+}
+div.homeConDown a.aLeft{
+	float: left;
+	border-right: 5px solid #323232;
+}
+div.homeConDown a.aRight{
+	float: right;
+	border-left: 5px solid #323232;
+}
+div.homeConDown a.aLeft span{
+	background-position: 7px 20px;
+}
+div.homeConDown a.aRight span{
+	background-position: -17px 20px;
+}
+div.homeConDown a.aLeft:hover span{
+	background-position: -41px 20px;
+}
+div.homeConDown a.aRight:hover span{
+	background-position: -63px 20px;
+}
+div.pageNum,div.pageNumLeft{
+	position: relative;
+	overflow: hidden;
+	float: left;
+}
+div.pageNum{
+	width: 486px;
+}
+div.pageNumLeft{
+	width: 100px;
+}
+div.pageNum a.aCenter{
+	display: block;
+	overflow: hidden;
+	padding: 15px;
+	position: relative;
+	float: left;
+	font-size: 30px;
+	border: 1px solid #323232;
+}
+#HomeBanner .bs-example,#carousel-example-captions,.carousel-inner,.item,.carousel-inner .item img,#HomeBanner .lunRight{
+	overflow: hidden;
+	height: 245px;
+	width: 700px;
+}
+#HomeBanner .bs-example{
+	position: relative;
+	float: left;
+}
+#HomeBanner .bs-example .left, .bs-example .right {
+	background: url(/statics/img/small.png) no-repeat;
+}
+#HomeBanner .bs-example .left {
+	background-position: -421px -60px;
+}
+#HomeBanner .bs-example .right {
+background-position: -444px -60px;
+}
+#HomeBanner .bs-example .carousel-control{
+	border: 3px solid #161313;
+}
+.carousel-inner .item img{
+	width: 980px;
+}
+#HomeBanner .lunRight{
+	width: 300px;
+	background: url(/statics/img/banner_bg.jpg);
+	position: relative;
+	float: right;
+}

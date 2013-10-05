@@ -1,0 +1,26 @@
+{% extends "loginBase.html" %}
+{% block loginTitle %}登录界面{% endblock %}
+{% block loginCon %}
+<li>
+    <!--<i class="login_icon1"></i>
+    <span class="login_s1">输入正确</span>-->
+    <h3 class="login_h3">User Name * 用户名</h3>
+</li>
+<li>
+    <input type="text" class="login_input" />
+</li>
+<li>
+    <!--<i class="login_icon2"></i>
+    <span class="login_s2">密码错误</span>-->
+    <h3 class="login_h3">Password *  密码</h3>
+</li>
+<li>
+    <input type="text" class="login_input1" />
+</li>
+{% endblock %}
+{% block login_sign %}
+<span class="login_sp1">
+    <a href="#" class="login_btn btn btn-primary">登 录</a>
+</span>
+<a href="/login" class="login_a">立即注册</a>
+{% endblock %}

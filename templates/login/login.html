@@ -1,0 +1,29 @@
+{% extends "loginBase.html" %}
+{% block loginTitle %}注册界面{% endblock %}
+{% block loginStyle %}style="height:465px;margin-top: -230px;"{% endblock %}
+{% block loginCon %}
+<li>
+    <h3 class="login_h3">E-mail * 邮箱</h3>
+</li>
+<li>
+    <input type="text" class="login_input" />
+</li>
+<li>
+    <h3 class="login_h3">Password *  密码</h3>
+</li>
+<li>
+    <input type="text" class="login_input1" />
+</li>
+<li>
+    <h3 class="login_h3">Password *  密码</h3>
+</li>
+<li>
+    <input type="text" class="login_input1" />
+</li>
+{% endblock %}
+{% block login_sign %}
+<span class="login_sp1">
+	<a href="" class="login_btn btn btn-primary">注 册</a>
+</span>
+<a href="/sign" class="login_a">立即登录</a>
+{% endblock %}
